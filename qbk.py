@@ -3,11 +3,17 @@ import requests
 import random
 import re
 import urllib.request
+from termcolor import colored
 
-rint('''
+print('''
 DDOS HTTP
 	''') # la grafica ci sta
-
+print("head...")
+users = [
+    "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.3) Gecko/20090913 Firefox/3.5.3"
+    "Mozilla / 5.0 (Macintosh; Intel Mac OS X 10.14; rv: 75.0) Gecko / 20100101 Firefox / 75.0"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
+]
 
 useragents=["AdsBot-Google ( http://www.google.com/adsbot.html)",
 			"Avant Browser/1.2.789rel1 (http://www.avantbrowser.com)",
@@ -440,7 +446,7 @@ useragents=["AdsBot-Google ( http://www.google.com/adsbot.html)",
 			"wii libnup/1.0",
 			]
 
-   print("🅳🅴🅳🅲🅾🅳🅴 🆃🅴🅰🅼")
+   print(colored( '''🅳🅴🅳🅲🅾🅳🅴 🆃🅴🅰🅼''','blue'))
 
 def starturl(): # in questa funzione setto l'url per renderlo usabile per il futuro settaggio delle richieste HTTP.
 	global url
