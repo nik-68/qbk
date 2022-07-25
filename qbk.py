@@ -459,7 +459,7 @@ useragents=["AdsBot-Google ( http://www.google.com/adsbot.html)",
 			]
 
  
-
+os.system("clear")
 def starturl(): # in questa funzione setto l'url per renderlo usabile per il futuro settaggio delle richieste HTTP.
 	global url
 	global url2
