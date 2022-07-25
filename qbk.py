@@ -1,3 +1,15 @@
+#import module
+import os, sys
+
+try:
+    import socks
+except:
+    if sys.platform.startswith("linux"):
+        os.system("pip3 install pysocks")
+    elif sys.platform.startswith("freebsd"):
+        os.system("pip3 install pysocks")
+    else:
+        os.system("pip install pysocks")
 import threading
 import requests
 import random
@@ -491,7 +503,6 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 		except:
 			urlport = "80"
 
-  print('''🅳🅴🅳🅲🅾🅳🅴 🆃🅴🅰🅼''')
 
 
 def dos():
