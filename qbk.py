@@ -446,7 +446,7 @@ useragents=["AdsBot-Google ( http://www.google.com/adsbot.html)",
 			"wii libnup/1.0",
 			]
 
-   print(colored( '''🅳🅴🅳🅲🅾🅳🅴 🆃🅴🅰🅼''','blue'))
+ 
 
 def starturl(): # in questa funzione setto l'url per renderlo usabile per il futuro settaggio delle richieste HTTP.
 	global url
@@ -491,7 +491,7 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 		except:
 			urlport = "80"
 
-print("🅳🅴🅳🅲🅾🅳🅴 🆃🅴🅰🅼")
+  print(colored( '''🅳🅴🅳🅲🅾🅳🅴 🆃🅴🅰🅼''','blue'))
 
 
 def dos():
