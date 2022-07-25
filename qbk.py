@@ -491,7 +491,7 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 		except:
 			urlport = "80"
 
-  print(colored( '''🅳🅴🅳🅲🅾🅳🅴 🆃🅴🅰🅼''','blue'))
+  print('''🅳🅴🅳🅲🅾🅳🅴 🆃🅴🅰🅼''')
 
 
 def dos():
