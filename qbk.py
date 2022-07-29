@@ -454,7 +454,7 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 	global choice1
 	global ips
 
-	choice1 = input("\nDo you want one target [0] or more[1] > ")
+	choice1 = input("\nDo Target [0] or more[1] > ")
 
 	if choice1 == "1":
 		ip_file = input("Insert txt file of ips > ")
@@ -495,7 +495,7 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 
 def proxymode():
 	global choice2
-	choice2 = input("Do you want proxy/socks mode? Answer 'y' to enable it: ")
+	choice2 = input("Proxy/socks mode? Answer 'y' ")
 	if choice2 == "y":
 		choiceproxysocks()
 	else:
@@ -513,7 +513,7 @@ def choiceproxysocks():
 		choiceproxysocks()
 
 def choicedownproxy():
-	choice4 = input("Do you want to download a new list of proxy? Answer 'y' to do it: ")
+	choice4 = input("Download a new list of proxy? Answer 'y' ")
 	if choice4 == "y":
 		urlproxy = "http://free-proxy-list.net/"
 		proxyget(urlproxy)
@@ -521,7 +521,7 @@ def choicedownproxy():
 		proxylist()
 
 def choicedownsocks():
-	choice4 = input("Do you want to download a new list of socks? Answer 'y' to do it: ")
+	choice4 = input("Download a new list of socks? Answer 'y' ")
 	if choice4 == "y":
 		urlproxy = "https://www.socks-proxy.net/"
 		proxyget(urlproxy)
@@ -564,7 +564,7 @@ def proxylist():
 def numthreads():
 	global threads
 	try:
-		threads = int(input("Insert number of threads (800): "))
+		threads = int(input("Threads (800): "))
 	except ValueError:
 		threads = 800
 		print ("800 threads selected.\n")
@@ -573,14 +573,14 @@ def numthreads():
 def multiplication():
 	global multiple
 	try:
-		multiple = int(input("Insert a number of multiplication for the attack [(1-5=normal)(50=powerful)(100 or more=bomb)]: "))
+		multiple = int(input("Attack [(1-5=normal)(50=powerful)(100 or more=bomb)]: "))
 	except ValueError:
 		print("You mistyped, try again.\n")
 		multiplication()
 	begin()
 
 def begin():
-	choice6 = input("Press 'Enter' to start attack: ")
+	choice6 = input("Press 'Enter' start Attack: ")
 	if choice6 == "":
 		loop()
 	elif choice6 == "Enter": #lool
